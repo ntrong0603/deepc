@@ -1,0 +1,38 @@
+<?php
+return [
+    'tong_the_du_an'                   => 'TỔNG THỂ DỰ ÁN',
+    'overview1'                        => 'KCN DEEP C Hải Phòng I',
+    'overview2'                        => 'KCN DEEP C Hải Phòng II (view 1)',
+    'overview3'                        => 'KCN DEEP C Hải Phòng II (view 2)',
+    'san_pham'                         => 'SẢN PHẨM',
+    'dat_cong_nghiep_cho_thue'         => 'Đất công nghiệp cho thuê',
+    'nha_xuong_xay_san'                => 'Nhà xưởng xây sẵn',
+    'dat_cong_nghiep_hoa_chat_hoa_dau' => 'Đất công nghiệp hoá chất, hoá dầu',
+    'tien_ich_noi_khu'                 => 'TIỆN ÍCH NỘI KHU',
+    'cang_hang_long'                   => 'Cảng hàng lỏng',
+    'khu_hoa_dau'                      => 'Khu hoá dầu',
+    'tram_bien_ap'                     => 'Trạm biến áp 220 KV Đình Vũ',
+    'tram_cat_dien'                    => 'Trạm cắt điện',
+    'nha_may_xu_ky_nuoc_thai'          => 'Nhà máy xử lý nước thải',
+    'cong_chao'                        => 'Cổng chào DEEP C Hải Phòng II',
+    'duong_noi_bo'                     => 'Đường nội bộ',
+    'duong_lam_tu_rac_thai_nhua'       => 'Đường làm từ rác thải nhựa',
+    'nha_may_bridgestone'              => 'Nhà máy của khách hàng',
+    // 'nha_may_bridgestone'              => 'Nhà máy Bridgestone',
+    'cang_dinh_vu'                     => 'Cảng Đình Vũ',
+    'cao_toc_ha_noi_hai_phong' => 'Cao tốc Hà Nội - Hải Phòng',
+    'cang_nuoc_sau_lach_huyen_deep_c_hai_phong_III' => 'Cảng nước sâu Lạch Huyện, [br] DEEP C Hải Phòng III',
+
+    'infor_gd1'                        => '<b>KCN DEEP C Hải Phòng I</b><br/>- Khu công nghiệp DEEP C Hải Phòng I (còn được gọi là khu công nghiệp Đình Vũ) là điểm xuất phát của tổ hợp khu công nghiệp DEEP C tại Việt Nam.<br/>- Dự án khởi động vào năm 1997 với sự hợp tác của tập đoàn Rent-A-Port đến từ Vương quốc Bỉ và UBND thành phố Hải Phòng.<br/>- Khu hóa dầu và cầu cảng hàng lỏng là những đặc điểm nổi bật làm nên sự khác biệt của DEEP C Hải Phòng I với các khu công nghiệp khác. Khách hàng tại đây được hưởng lợi từ cầu cảng hàng lỏng dùng chung và cắt giảm được chi phí đầu tư một cầu cảng riêng.<br/><br/><b>Diện tích: </b>541 ha<br/><b>Hạ tầng:</b><br/>- Cạnh cảng biển Đình Vũ<br/>- 17 km đến cảng nước sâu Lạch Huyện<br/>- 10 km đến Sân bay Quốc tế Cát Bi<br/>- Cách cao tốc Hà Nội - Hải Phòng 1km<br/>- Cách đường cao tốc biên giới Hải Phòng - Hạ Long - Trung Quốc 1km',
+
+    'infor_gd2'                        => '<b>KCN DEEP C Hải Phòng II</b><br/>- Nằm ở phía nam của DEEP C Hải Phòng I, trên bán đảo Nam Đình Vũ, khu công nghiệp DEEP C Hải Phòng II có cùng lợi thế vị trí thuận lợi và ưu đãi thuế khu kinh tế. DEEP C Hải Phòng II được định hướng phát triển bền vững với quy hoạch dành nhiều diện tích đất cho cảnh quan xanh. DEEP C đã thành công xây dựng tại đây con đường từ rác thải nhựa đầu tiên của Việt Nam.<br/><br/><b>Diện tích:</b> 645 ha<br/><br/><b>Hạ tầng:</b><br/>- Cách cảng Đình Vũ 7 km<br/>- 13 km đến cảng nước sâu Lạch Huyện<br/>- Cách Sân bay Quốc tế Cát Bi 15 km<br/>- Cách đường cao tốc Hà Nội - Hải Phòng 3 km<br/>- Cách đường cao tốc biên giới Hải Phòng - Hạ Long - Trung Quốc 6 km',
+
+    'contact'                          => 'Liên hệ',
+    'submit'                           => 'Gửi',
+    'reset'                            => "Nhập lại",
+    'career'                           => 'Công ty',
+    'name'                             => 'Họ tên',
+    'email'                            => 'Email',
+    'phone'                            => 'Tỉnh, Thành Phố',
+    'note'                             => 'Nội dung',
+];

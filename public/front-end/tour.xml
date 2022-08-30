@@ -1,0 +1,388 @@
+﻿<krpano version="1.20.7" title="Virtual Tour">
+
+    <include url="skin/vtourskin.xml" />
+    <include url="xml/main.xml" />
+
+    <!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+    <skin_settings maps="false" maps_type="google" maps_bing_api_key="" maps_google_api_key="" maps_zoombuttons="false" maps_loadonfirstuse="true" gyro="true" gyro_keeplookingdirection="false" webvr="true" webvr_keeplookingdirection="true" webvr_prev_next_hotspots="true" autotour="false" littleplanetintro="false" followmousecontrol="false" title="true" thumbs="true" thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160" thumbs_opened="false" thumbs_text="false" thumbs_dragging="true" thumbs_onhoverscrolling="false" thumbs_scrollbuttons="false" thumbs_scrollindicator="false" thumbs_loop="false" tooltips_buttons="false" tooltips_thumbs="false" tooltips_hotspots="false" tooltips_mapspots="false" deeplinking="false" loadscene_flags="MERGE" loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)" loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)" loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)" loadingtext="loading..." layout_width="100%" layout_maxwidth="814" controlbar_width="-24" controlbar_height="40" controlbar_offset="20" controlbar_offset_closed="-40" controlbar_overlap.no-fractionalscaling="10" controlbar_overlap.fractionalscaling="0" design_skin_images="vtourskin.png" design_bgcolor="0x2D3E50" design_bgalpha="0.8" design_bgborder="0" design_bgroundedge="1" design_bgshadow="0 4 10 0x000000 0.3" design_thumbborder_bgborder="3 0xFFFFFF 1.0" design_thumbborder_padding="2" design_thumbborder_bgroundedge="0" design_text_css="color:#FFFFFF; font-family:Arial;" design_text_shadow="1" />
+
+    <!--
+        For an alternative skin design either change the <skin_settings> values
+        from above or optionally include one of the predefined designs from below.
+    -->
+    <!-- <include url="skin/vtourskin_design_flat_light.xml" /> -->
+    <!-- <include url="skin/vtourskin_design_glass.xml" /> -->
+    <!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+    <!-- <include url="skin/vtourskin_design_117.xml" /> -->
+    <!-- <include url="skin/vtourskin_design_117round.xml" /> -->
+    <!-- <include url="skin/vtourskin_design_black.xml" /> -->
+
+
+    <!-- startup action - load the first scene -->
+    <action name="startup" autorun="onstart">
+        if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+        loadscene(get(startscene), null, MERGE);
+        if(startactions !== null, startactions() );
+    </action>
+
+    <scene name="scene_tongquan1-200m_GD1" title="KCN DEEP C Hải Phòng I" onstart="js(info('gd1'));js(setTextHoverHotspot());" thumburl="panos/tongquan1-200m_GD1.tiles/thumb.jpg" lat="20.81566972" lng="106.79501361" heading="0.0">
+
+        <view hlookat="-22.561" vlookat="11.270" fovtype="MFOV" fov="127.033" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/tongquan1-200m_GD1.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/tongquan1-200m_GD1.tiles/pano_%s.jpg" />
+        </image>
+
+        <hotspot name="hotspot-ctvlh" style="skin_cau" ath="113.507" atv="-1.963" onhover="" />
+        <hotspot name="hotspot-deep-c-hp-iii" style="skin_gate" ath="108.584" atv="-4.275" onhover="" />
+        <hotspot name="hotspot-cthn-hp" style="skin_caotoc" ath="-117.075" atv="0.171" onhover="" />
+        <hotspot name="hotspot-hp-hl-vd" style="skin_caotoc" ath="-49.953" atv="-3.221" onhover="" />
+        <hotspot name="hotspot-chp" style="skin_cang" ath="-24.478" atv="1.117" onhover="" />
+        <hotspot name="hotspot-cbd" style="skin_cau" ath="-37.580" atv="-3.697" onhover="" />
+        <hotspot name="hotspot-dvplaza" style="skin_TTTM" ath="-56.529" atv="-3.613" onhover="" />
+        <hotspot name="hotspot-chkcatbi" style="skin_sanbay" ath="-111.849" atv="-2.652" onhover="" />
+        <hotspot name="hotspot-clh" style="skin_cang" ath="99.139" atv="-4.312" onhover="" />
+
+
+        <hotspot name="hotspot_tongquan2-200m_gd2-1" ath="-140.436" atv="-2.439" style="skin_sp" onhover="showtext('KCN DEEP C Hải Phòng II',hotspottextstyle);" onclick="loadscene(scene_tongquan2-200m_gd2-1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_tongquan3-300m_gd2-2" ath="-179.226" atv="-3.112" style="skin_sp" onhover="showtext('KCN DEEP C Hải Phòng 2II',hotspottextstyle);" onclick="loadscene(scene_tongquan3-300m_gd2-2,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_cang-dinh-vu" ath="-41.397" atv="8.905" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Cảng Đình Vũ',hotspottextstyle);" onclick="loadscene(scene_cang-dinh-vu,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_cang-hang-long-50m" ath="4.007" atv="14.714" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Cảng Hàng Lỏng',hotspottextstyle);" onclick="loadscene(scene_cang-hang-long-50m,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_cong-deep-c-15m" ath="-122.008" atv="5.690" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Cổng chào DEEP C Hải Phòng II',hotspottextstyle);" onclick="loadscene(scene_cong-deep-c-15m,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_khu-hoa-dau-100m" ath="-1.657" atv="15.014" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Khu hóa dầu',hotspottextstyle);" onclick="loadscene(scene_khu-hoa-dau-100m,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_duong-noi-bo" ath="-103.837" atv="8.194" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Đường nội bộ',hotspottextstyle);" onclick="loadscene(scene_duong-noi-bo,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_nha-may-bridestones-2-50m_" ath="-71.902" atv="7.189" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Nha máy Bridestones',hotspottextstyle);" onclick="loadscene(scene_nha-may-bridestones-2-50m_,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_nha-may-nuoc-thai-30m" ath="-99.070" atv="8.080" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Nhà máy xử lý nước thải',hotspottextstyle);" onclick="loadscene(scene_nha-may-nuoc-thai-30m,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_nha-xuong-1-30m" ath="-93.703" atv="-1.922" style="skin_sp2" onhover="showtext('Nhà xưởng xây sẵn',hotspottextstyle);" onclick="loadscene(scene_nha-xuong-1-30m,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_tram-dien-50m" ath="-49.880" atv="1.721" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Trạm biến áp 220KV Đình Vũ',hotspottextstyle);" onclick="loadscene(scene_tram-dien-50m,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_tram-cat-dien" ath="-53.997" atv="1.786" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Trặm cắt điện',hotspottextstyle);" onclick="loadscene(scene_tram-cat-dien,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+
+    </scene>
+
+    <scene name="scene_tongquan2-200m_GD2-1" title="KCN DEEP C Hải Phòng II" onstart="js(info('gd2'));js(setTextHoverHotspot());" thumburl="panos/tongquan2-200m_GD2-1.tiles/thumb.jpg" lat="20.79845556" lng="106.77966417" heading="0.0">
+
+        <view hlookat="362.043" vlookat="18.632" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/tongquan2-200m_GD2-1.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/tongquan2-200m_GD2-1.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_tongquan3-300m_gd2-2" ath="139.402" atv="-2.187" style="skin_sp" onhover="showtext('KCN DEEP C Hải Phòng 2II',hotspottextstyle);" onclick="loadscene(scene_tongquan3-300m_gd2-2,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="43.157" atv="-3.000" style="skin_sp" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_cong-deep-c-15m" ath="1.666" atv="18.441" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Cổng chào DEEP C Hải Phòng II',hotspottextstyle);" onclick="loadscene(scene_cong-deep-c-15m,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_duong-noi-bo" ath="6.583" atv="6.703" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Đường nội bộ',hotspottextstyle);" onclick="loadscene(scene_duong-noi-bo,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_duong-lam-rac-thai-nhua-20m" ath="-60.926" atv="26.730" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Đường làm từ rác thải nhựa',hotspottextstyle);" onclick="loadscene(scene_duong-lam-rac-thai-nhua-20m_,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+		<hotspot name="hotspot-cthn-hp" style="skin_caotoc" ath="-63.704" atv="1.931" />
+		<hotspot name="hotspot-ctvlh" style="skin_cau" ath="77.293" atv="-1.596" />
+		<hotspot name="hotspot-clh" style="skin_cang" ath="82.829" atv="-4.293" />
+		<hotspot name="hotspot-deep-c-hp-iii" style="skin_gate" ath="90.719" atv="-4.516" />
+		<hotspot name="hotspot-chkcatbi" style="skin_sanbay" ath="-94.149" atv="-3.497" />
+        <hotspot name="hotspot-service_complex" ath="10.692" atv="17.630" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover=""/>
+    </scene>
+
+    <scene name="scene_tongquan3-300m_GD2-2" title="KCN DEEP C Hải Phòng 2II" onstart="js(info('gd2'));js(setTextHoverHotspot());" thumburl="panos/tongquan3-300m_GD2-2.tiles/thumb.jpg" lat="20.78736917" lng="106.79638694" heading="0.0">
+
+        <view hlookat="-384.345" vlookat="28.333" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/tongquan3-300m_GD2-2.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/tongquan3-300m_GD2-2.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_tongquan2-200m_gd2-1" ath="-49.710" atv="-1.752" style="skin_sp" onhover="showtext('KCN DEEP C Hải Phòng II',hotspottextstyle);" onclick="loadscene(scene_tongquan2-200m_gd2-1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="-2.757" atv="-4.489" style="skin_sp" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot-ctvlh" style="skin_cau" ath="60.678" atv="-2.263" />
+        <hotspot name="hotspot-clh" style="skin_cang" ath="72.583" atv="-3.399" />
+        <hotspot name="hotspot-deep-c-hp-iii" style="skin_gate" ath="79.903" atv="-3.376" />
+    </scene>
+
+    <scene name="scene_cang-dinh-vu" title="Cảng Đình Vũ" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/cang-dinh-vu.tiles/thumb.jpg" lat="20.82337917" lng="106.78537500" heading="0.0">
+
+        <view hlookat="56.989" vlookat="13.252" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/cang-dinh-vu.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/cang-dinh-vu.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="141.420" atv="-3.892" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+
+    </scene>
+
+    <scene name="scene_cang-hang-long-50m" title="Cảng Hàng Lỏng (50m)" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/cang-hang-long-50m.tiles/thumb.jpg" lat="20.82478306" lng="106.79519472" heading="0.0">
+
+        <view hlookat="47.965" vlookat="14.160" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/cang-hang-long-50m.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/cang-hang-long-50m.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="-179.165" atv="-5.895" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_cang-hang-long" ath="-6.309" atv="35.791" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Cảng Hàng Lỏng',hotspottextstyle);" onclick="loadscene(scene_cang-hang-long,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+
+    </scene>
+
+    <scene name="scene_cang-hang-long" title="Cảng Hàng Lỏng" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/cang-hang-long.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="-311.912" vlookat="2.875" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/cang-hang-long.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/cang-hang-long.tiles/pano_%s.jpg" />
+        </image>
+
+
+        <hotspot name="hotspot_cang-hang-long-50m" ath="-145.929" atv="-15.257" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Cảng Hàng Lỏng (50m)',hotspottextstyle);" onclick="loadscene(scene_cang-hang-long-50m,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_cang-hang-long-100m" ath="41.908" atv="-6.736" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Cảng Hàng Lỏng (100m)',hotspottextstyle);" onclick="loadscene(scene_cang-hang-long-100m,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="-176.401" atv="-14.436" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+
+    </scene>
+
+    <scene name="scene_cang-hang-long-100m" title="Cảng Hàng Lỏng (100m)" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/cang-hang-long-100m.tiles/thumb.jpg" lat="20.82933917" lng="106.79637278" heading="0.0">
+
+        <view hlookat="-101.250" vlookat="16.030" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/cang-hang-long-100m.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/cang-hang-long-100m.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_cang-hang-long" ath="-76.160" atv="11.781" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Cảng Hàng Lỏng',hotspottextstyle);" onclick="loadscene(scene_cang-hang-long,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="-47.096" atv="-2.692" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot-cbd" style="skin_cau" ath="31.404" atv="-5.502"/>
+        <hotspot name="hotspot-hp-hl-vd" style="skin_caotoc" ath="-2.849" atv="-4.592"/>
+    </scene>
+
+    <scene name="scene_cong-deep-c-15m" title="Cổng chào DEEP C Hải Phòng II (15m)" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/cong-deep-c-15m.tiles/thumb.jpg" lat="20.80439556" lng="106.77947972" heading="0.0">
+
+        <view hlookat="221.355" vlookat="16.846" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/cong-deep-c-15m.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/cong-deep-c-15m.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="-0.237" atv="-3.371" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_cong-deep-c" ath="-132.754" atv="24.974" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Cổng chào DEEP C Hải Phòng II',hotspottextstyle);" onclick="loadscene(scene_cong-deep-c,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_right" style="skin_right" ath="80.986" atv="-0.948"/>
+        <hotspot name="hotspot_left" style="skin_left" ath="-19.052" atv="-1.423"/>
+    </scene>
+
+    <scene name="scene_cong-deep-c" title="Cổng chào DEEP C Hải Phòng II" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/cong-deep-c.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/cong-deep-c.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/cong-deep-c.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_cong-deep-c-15m" ath="178.008" atv="-11.903" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Cổng chào DEEP C Hải Phòng II (15m)',hotspottextstyle);" onclick="loadscene(scene_cong-deep-c-15m,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="-170.780" atv="-13.339" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+
+    </scene>
+
+    <scene name="scene_duong-lam-rac-thai-nhua-20m_" title="Đường làm từ rác thải nhựa (20m)" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/duong-lam-rac-thai-nhua-20m_.tiles/thumb.jpg" lat="20.80032139" lng="106.77618556" heading="0.0">
+
+        <view hlookat="9.429" vlookat="30.705" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/duong-lam-rac-thai-nhua-20m_.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/duong-lam-rac-thai-nhua-20m_.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_duong-lam-rac-thai-nhua" ath="40.931" atv="52.487" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Đường làm từ rác thải nhựa',hotspottextstyle);" onclick="loadscene(scene_duong-lam-rac-thai-nhua,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="32.032" atv="-1.818" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+
+    </scene>
+
+    <scene name="scene_duong-lam-rac-thai-nhua" title="Đường làm từ rác thải nhựa" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/duong-lam-rac-thai-nhua.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="-63.722" vlookat="7.171" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/duong-lam-rac-thai-nhua.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/duong-lam-rac-thai-nhua.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_duong-lam-rac-thai-nhua-20m" ath="-0.935" atv="-14.501" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Đường làm từ rác thải nhựa (20m)',hotspottextstyle);" onclick="loadscene(scene_duong-lam-rac-thai-nhua-20m_,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="-36.755" atv="-16.297" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+
+
+    </scene>
+
+    <scene name="scene_duong-noi-bo" title="Đường nội bộ" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/duong-noi-bo.tiles/thumb.jpg" lat="20.81282028" lng="106.78056194" heading="0.0">
+
+        <view hlookat="-0.863" vlookat="17.781" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/duong-noi-bo.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/duong-noi-bo.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="77.457" atv="-0.900" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+		<hotspot name="hotspot_cong-deep-c-15m" ath="166.613" atv="-3.058" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onclick="loadscene(scene_cong-deep-c-15m,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot-cbd" style="skin_cau" ath="-19.268" atv="-5.282"/>
+		<hotspot name="hotspot-hp-hl-vd" style="skin_caotoc" ath="-49.046" atv="-5.645"/>
+    </scene>
+
+    <scene name="scene_khu-hoa-dau-100m" title="Khu hóa dầu (100m)" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/khu-hoa-dau-100m.tiles/thumb.jpg" lat="20.81992611" lng="106.79516444" heading="0.0">
+
+        <view hlookat="-40.143" vlookat="29.038" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/khu-hoa-dau-100m.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/khu-hoa-dau-100m.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="-148.416" atv="-2.160" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_khu-hoa-dau-50m" ath="-0.806" atv="20.546" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Khu hóa dầu (50m)',hotspottextstyle);" onclick="loadscene(scene_khu-hoa-dau-50m,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+
+    </scene>
+
+    <scene name="scene_khu-hoa-dau-50m" title="Khu hóa dầu (50m)" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/khu-hoa-dau-50m.tiles/thumb.jpg" lat="20.82258972" lng="106.79516306" heading="0.0">
+
+        <view hlookat="-114.059" vlookat="26.750" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/khu-hoa-dau-50m.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/khu-hoa-dau-50m.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="-173.817" atv="-5.730" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_khu-hoa-dau-100m" ath="-174.479" atv="11.605" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Khu hóa dầu (100m)',hotspottextstyle);" onclick="loadscene(scene_khu-hoa-dau-100m,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+
+    </scene>
+
+    <scene name="scene_nha-may-bridestones-2-50m_" title="Nhà máy Bridgestone 2 (50m)" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/nha-may-bridestones-2-50m_.tiles/thumb.jpg" lat="20.82071528" lng="106.78635806" heading="0.0">
+
+        <view hlookat="271.423" vlookat="21.909" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/nha-may-bridestones-2-50m_.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/nha-may-bridestones-2-50m_.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_nha-may-bridestones-4-100m" ath="-135.258" atv="-2.162" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Nhà máy của khách hàng 4 (150m)',hotspottextstyle);" onclick="loadscene(scene_nha-may-bridestones-4-150m_,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="119.442" atv="-3.095" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+
+    </scene>
+
+    <scene name="scene_nha-may-bridestones-4-150m_" title="Nhà máy của khách hàng (150m)" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/nha-may-bridestones-4-150m_.tiles/thumb.jpg" lat="20.81625500" lng="106.78409861" heading="0.0">
+
+        <view hlookat="-35.962" vlookat="14.884" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/nha-may-bridestones-4-150m_.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/nha-may-bridestones-4-150m_.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_nha-may-bridestones-2-50m_" ath="42.381" atv="0.236" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Nhà máy của khách hàng 2 (50m)',hotspottextstyle);" onclick="loadscene(scene_nha-may-bridestones-2-50m_,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="99.982" atv="-3.325" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+
+    </scene>
+
+    <scene name="scene_nha-may-nuoc-thai-30m" title="Nhà máy xử lý nước thải (30m)" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/nha-may-nuoc-thai-30m.tiles/thumb.jpg" lat="20.81228139" lng="106.78117417" heading="0.0">
+
+        <view hlookat="32.256" vlookat="20.841" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/nha-may-nuoc-thai-30m.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/nha-may-nuoc-thai-30m.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="scene_nha-may-nuoc-thai-20m" ath="40.407" atv="16.893" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Nhà máy xử lý nước thải',hotspottextstyle);" onclick="loadscene(scene_nha-may-nuoc-thai-20m,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="68.088" atv="-3.505" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+
+    </scene>
+
+    <scene name="scene_nha-may-nuoc-thai-20m" title="Nhà máy xử lý nước thải" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/nha-may-nuoc-thai-20m.tiles/thumb.jpg" lat="20.81279056" lng="106.78157778" heading="0.0">
+
+        <view hlookat="80.004" vlookat="49.794" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/nha-may-nuoc-thai-20m.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/nha-may-nuoc-thai-20m.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="105.087" atv="-5.890" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_nha-may-nuoc-thai-30m" ath="-119.836" atv="17.501" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Nhà máy xử lý nước thải (30m)',hotspottextstyle);" onclick="loadscene(scene_nha-may-nuoc-thai-30m,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+
+    </scene>
+
+    <scene name="scene_nha-xuong-1-30m" title="Nhà xưởng xây sẵn (30m)" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/nha-xuong-1-30m.tiles/thumb.jpg" lat="20.81421000" lng="106.77153306" heading="0.0">
+
+        <view hlookat="140.908" vlookat="24.495" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/nha-xuong-1-30m.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/nha-xuong-1-30m.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="90.902" atv="-1.669" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_nha-xuong" ath="161.607" atv="10.334" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Nhà xưởng xây sẵn',hotspottextstyle);" onclick="loadscene(scene_nha-xuong,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+		<hotspot name="hotspot_cong-deep-c-15m" ath="149.115" atv="1.416" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onclick="loadscene(scene_cong-deep-c-15m,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+    </scene>
+
+    <scene name="scene_nha-xuong" title="Nhà xưởng xây sẵn" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/nha-xuong.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="4.006" vlookat="-1.196" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/nha-xuong.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/nha-xuong.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_nha-xuong-1-30m" ath="-81.592" atv="-3.546" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Nhà xưởng xây sẵn (30m)',hotspottextstyle);" onclick="loadscene(scene_nha-xuong-1-30m,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="-96.953" atv="-8.937" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+        <hotspot name="hotspot_nha-xuong-2" ath="-8.843" atv="-3.850" url="skin/hotspot.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Nhà xưởng xây sẵn (2)',hotspottextstyle);" onclick="loadscene(scene_nha-xuong-2,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+
+    </scene>
+
+    <scene name="scene_nha-xuong-2" title="Nhà xưởng xây sẵn" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/nha-xuong.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="4.006" vlookat="-1.196" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/nha-xuong-2.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/nha-xuong-2.tiles/pano_%s.jpg" />
+        </image>
+
+        <hotspot name="hotspot_nha-xuong" ath="-1.960" atv="0.800" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('Nhà xưởng xây sẵn',hotspottextstyle);" onclick="loadscene(scene_nha-xuong,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+
+    </scene>
+
+    <scene name="scene_tram-cat-dien" title="Trạm biến áp 220KV Đình Vũ" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/tram-cat-dien.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="384.314" vlookat="3.574" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/tram-cat-dien.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/tram-cat-dien.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="-109.513" atv="-5.025" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+
+    </scene>
+
+    <scene name="scene_tram-dien-50m" title="Trạm cắt điện" onstart="js(info());js(setTextHoverHotspot());" thumburl="panos/tram-dien-50m.tiles/thumb.jpg" lat="20.82943944" lng="106.77841444" heading="0.0">
+
+        <view hlookat="-89.989" vlookat="9.168" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/tram-dien-50m.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/tram-dien-50m.tiles/pano_%s.jpg" />
+        </image>
+        <hotspot name="hotspot_tongquan1-200m_GD1" ath="128.815" atv="-2.799" url="skin/hotspot2.png" onloaded="do_crop_animation(128,112,4);" scale='0.5' zoom="true" onhover="showtext('KCN DEEP C Hải Phòng I',hotspottextstyle);" onclick="loadscene(scene_tongquan1-200m_gd1,null,MERGE,OPENBLEND(1.0, -0.5, 0.3, 0.8, linear))"/>
+
+    </scene>
+
+
+</krpano>
